@@ -36,13 +36,8 @@ def create_palette_image(hex_colors):
     draw = ImageDraw.Draw(palette_img)
     
     for i, color in enumerate(hex_colors):
-        # Convertir le hex en RGB
-        r = int(color[1:3], 16)
-        g = int(color[3:5], 16)
-        b = int(color[5:7], 16)
-        
         box = (i * swatch_width, 0, (i + 1) * swatch_width, swatch_height)
-        draw.rectangle(box, fill=(r, g, b))
+        draw.rectangle(box, fill=color)
         
     return palette_img
 
