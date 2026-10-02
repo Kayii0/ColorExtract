@@ -59,7 +59,7 @@ if uploaded_file is not None:
     palette = get_color_palette(uploaded_file, n_colors=n_colors)
 
     with col2:
-        st.subheader("Palette extraite")
+        st.subheader("")
 
     st.markdown("### Codes Héxadécimaux :")
     cols = st.columns(len(palette))
