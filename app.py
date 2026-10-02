@@ -81,3 +81,15 @@ if uploaded_file is not None:
         file_name="palette.txt",
         mime="text/plain"
     )
+
+    buffer = io.BytesIO()
+    palette_img = create_palette_image(palette)
+    palette_img.save(buffer, format="PNG")
+    byte_im = buffer.getvalue()
+
+    st.download_button(
+        label="🖼️ Télécharger l'image de la palette (PNG)",
+        data=byte_im,
+        file_name="palette.png",
+        mime="image/png"
+    )
